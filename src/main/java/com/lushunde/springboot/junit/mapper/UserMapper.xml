@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lushunde.springboot.junit.mapper.UserMapper">
+
+	<select id="getUserById" resultType="com.lushunde.springboot.junit.model.User">
+		select * from user t where
+		t.id = #{id}
+	</select>
+
+	<select id="findByPage" resultType="com.lushunde.springboot.junit.model.User">
+		select * from user
+	</select>
+
+	<insert id="insertUser">
+		insert into user
+		(id,username,password,age,address)
+		values(null,#{username},#{password},#{age,jdbcType=INTEGER},#{address})
+	</insert>
+	
+	<insert id="updateUser">
+		update user set
+			username=#{username, jdbcType=VARCHAR}, 									
+			password=#{password, jdbcType=VARCHAR}, 									
+			age=#{age, jdbcType=INTEGER},
+			address=#{address, jdbcType=VARCHAR}
+		where id=#{id, jdbcType=BIGINT}
+	</insert>
+
+	<delete id="deleteUser">
+		delete from user where id = #{id}
+	</delete>
+
+</mapper>

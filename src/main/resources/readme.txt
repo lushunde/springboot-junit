@@ -1,0 +1,1 @@
+/*[9:53:56][73 ms]*/ ALTER TABLE `dbjunit`.`user` CHANGE `Id` `Id` BIGINT(20) NOT NULL AUTO_INCREMENT, ADD COLUMN `username` VARCHAR(20) NOT NULL AFTER `Id`, ADD COLUMN `password` VARCHAR(20) NOT NULL AFTER `username`, ADD COLUMN `age` INT(4) NULL AFTER `password`, ADD COLUMN `address` VARCHAR(50) NULL AFTER `age`; 
